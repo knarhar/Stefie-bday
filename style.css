@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+.container {
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 600px;
+}
+
+.card {
+    background: white;
+    border-radius: 30px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: cardAppear 1s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(-10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+h1 {
+    font-size: clamp(1.5em, 5vw, 2.8em);
+    color: #667eea;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.name {
+    font-size: clamp(2.5em, 8vw, 4em);
+    color: #764ba2;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    animation: colorChange 3s infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes colorChange {
+
+    0%,
+    100% {
+        color: #764ba2;
+    }
+
+    50% {
+        color: #f093fb;
+    }
+}
+
+.message {
+    font-size: clamp(1em, 3vw, 1.3em);
+    color: #555;
+    margin: 25px 0;
+    line-height: 1.6;
+}
+
+.slang {
+    font-weight: bold;
+    color: #667eea;
+}
+
+.cake {
+    font-size: clamp(3em, 10vw, 5em);
+    margin: 20px 0;
+    display: inline-block;
+    animation: rotate 4s infinite;
+    cursor: pointer;
+}
+
+@keyframes rotate {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-15deg);
+    }
+
+    75% {
+        transform: rotate(15deg);
+    }
+}
+
+.cake:hover {
+    animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-25deg);
+    }
+
+    75% {
+        transform: rotate(25deg);
+    }
+}
+
+.balloon {
+    position: fixed;
+    font-size: clamp(2em, 4vw, 3em);
+    animation: float 6s infinite ease-in-out;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-50px) rotate(10deg);
+    }
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #f093fb;
+    animation: fall 4s infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: clamp(1em, 3vw, 1.2em);
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.sparkle {
+    position: fixed;
+    pointer-events: none;
+    animation: sparkle 1s ease-out forwards;
+    z-index: 100;
+}
+
+@keyframes sparkle {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
